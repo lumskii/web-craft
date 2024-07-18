@@ -22,6 +22,7 @@ B (255 */
   :root {
     --background: 216 100% 98.04%;
     --foreground: 213.6 100% 4.9%;
+    --text-color: var(--foreground, #000);
 
     --primary: 214.12 100% 50%;
     --primary-foreground: 0 0% 100%;
@@ -57,36 +58,36 @@ B (255 */
        URL: https://gradient.page */
 
     /* CSS: .bg-gradient { background: var(--gradient) } */
-    --gradient: #d38312;
+    --gradient: linear-gradient(to top left, #007adf, #00ecbc);
 
-    --background: 37 54.6% 3.6%;
-    --foreground: 37 8.4% 97.25%;
+    --background: 216 100% 15%;
+    --foreground: 0 0% 100%;
 
-    --muted: 37 42% 13.5%;
-    --muted-foreground: 37 8.4% 54.5%;
+    --primary: 214.12 100% 50%;
+    --primary-foreground: 0 0% 100%;
 
-    --popover: 37 48.2% 5.8500000000000005%;
-    --popover-foreground: 37 8.4% 97.25%;
+    --card: 216 100% 20%;
+    --card-foreground: 0 0% 100%;
 
-    --card: 37 48.2% 5.8500000000000005%;
-    --card-foreground: 37 8.4% 97.25%;
+    --popover: 216 100% 25%;
+    --popover-foreground: 0 0% 100%;
 
-    --border: 37 42% 13.5%;
-    --input: 37 42% 13.5%;
+    --secondary: 214.74 100% 30%;
+    --secondary-foreground: 0 0% 100%;
 
-    --primary: 37 84% 45%;
-    --primary-foreground: 37 8.4% 97.25%;
+    --muted: 213.6 100% 25%;
+    --muted-foreground: 0 0% 60%;
 
-    --secondary: 37 42% 13.5%;
-    --secondary-foreground: 37 8.4% 97.25%;
+    --accent: 213.6 100% 40%;
+    --accent-foreground: 0 0% 100%;
 
-    --accent: 37 42% 13.5%;
-    --accent-foreground: 37 8.4% 97.25%;
+    --destructive: 0 84.2% 40%;
+    --destructive-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 37 8.4% 97.25%;
+    --border: 0 0% 80%;
+    --input: 0 0% 30%;
+    --ring: 214.12 100% 50%;
 
-    --ring: 37 84% 45%;
   }
 }
 
@@ -102,6 +103,10 @@ B (255 */
 .dotPattern {
   background-image: radial-gradient(rgb(35, 40, 68) 1px, transparent 1px);
   background-size: 25px 25px;
+}
+
+.text-dynamic-color {
+  color: var(--text-color);
 }
 
 .use-automation-zoom-in {
