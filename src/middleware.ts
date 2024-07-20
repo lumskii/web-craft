@@ -5,7 +5,8 @@ const publicRoutes = createRouteMatcher(["/site", "/api/uploadthing"]);
 
 export default clerkMiddleware((auth, req) => {
   if (publicRoutes(req)) {
-    auth().protect();
+    // Allow public access to these routes
+    return NextResponse.next();
   }
 
   const url = req.nextUrl;
@@ -43,8 +44,10 @@ export default clerkMiddleware((auth, req) => {
   ) {
     return NextResponse.rewrite(new URL(`${pathWithSearchParams}`, req.url));
   }
+
+  return NextResponse.next(); // Allow other requests to proceed
 });
 
 export const config = {
-  matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"],
+  matcher: ['/((?!.+\\.[\\w]+$|_next).*)', '/', '/(api|trpc)(.*)'],
 };

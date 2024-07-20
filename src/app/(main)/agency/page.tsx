@@ -34,7 +34,7 @@ const Page = async ({searchParams}:{searchParams:{plan:Plan; state: string; code
         <h1 className="text-4xl">Create An Agency</h1>
         <AgencyDetails 
             data={{ companyEmail: authUser?.emailAddresses[0].emailAddress}}
-        />
+            />
     </div>
   </div>
 };
