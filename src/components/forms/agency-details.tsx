@@ -121,22 +121,25 @@ const AgencyDetails = ({ data }: Props) => {
                 state: values.zipCode,
               },
             }
-            const customerResponse = await fetch('/api/stripe/create-customer', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify(bodyData),
-            })
-            const customerData: { customerId: string } =
-              await customerResponse.json()
-            custId = customerData.customerId
+          //   const customerResponse = await fetch('/api/stripe/create-customer', {
+          //     method: 'POST',
+          //     headers: {
+          //       'Content-Type': 'application/json',
+          //     },
+          //     body: JSON.stringify(bodyData),
+          //   })
+            // const customerData: { customerId: string } =
+              // await customerResponse.json()
+            // custId = customerData.customerId
           }
       newUserData = await initUser({ role: 'AGENCY_OWNER' })
-      if (!data?.customerId && !custId) return
-      const response = await upsertAgency({
+      // if (!data?.customerId && !custId) return
+      if (!data?.id) { // delete this later
+      // const response = await upsertAgency({
+        await upsertAgency({ // delete this later
         id: data?.id ? data.id : v4(),
-        customerId: data?.customerId || custId || '',
+        // customerId: data?.customerId || custId || '',
+        customerId: data?.customerId || '', // delete this later
         address: values.address,
         agencyLogo: values.agencyLogo,
         city: values.city,
@@ -155,8 +158,8 @@ const AgencyDetails = ({ data }: Props) => {
       toast({
         title: 'Agency Created',
       })
-      if (data?.id) return router.refresh()
-      if (response) {
+      // if (data?.id) return router.refresh()
+      // if (response) {
         return router.refresh()
       }
     } catch (error) {
