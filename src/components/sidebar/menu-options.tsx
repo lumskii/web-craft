@@ -22,12 +22,12 @@ import {
   CommandItem,
   CommandList,
 } from "../ui/command";
-import Link from "next/link";
 import { useModal } from "@/providers/modal-provider";
 import CustomModal from "../global/custom-modal";
 import SubAccountDetails from "../forms/subaccount-details";
 import { Separator } from "../ui/separator";
 import { icons } from "@/lib/constants";
+import Link from "next/link";
 
 type Props = {
   defaultOpen?: boolean;
@@ -122,7 +122,7 @@ const MenuOptions = ({
                     user?.role === "AGENCY_ADMIN") &&
                     user?.Agency && (
                       <CommandGroup heading="Agency">
-                        <CommandItem className="!bg-transparent my-2 text-primary broder-[1px] border-border p-2 rounded-md hover:!bg-muted cursor-pointer transition-all">
+                        <CommandItem className="!bg-transparent my-2 text-primary border-[1px] border-border p-2 rounded-md hover:!bg-muted cursor-pointer transition-all">
                           {defaultOpen ? (
                             <Link
                               href={`/agency/${user?.Agency?.id}`}

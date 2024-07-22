@@ -20,7 +20,7 @@ import {
   import { db } from './db'
   import { z } from 'zod'
   
-//   import Stripe from 'stripe'
+  import Stripe from 'stripe'
   
   export type NotificationWithUser =
     | ({
@@ -58,7 +58,7 @@ import {
     })
   }
   
-  export type AuthUserWithAgencySigebarOptionsSubAccounts =
+  export type AuthUserWithAgencySidebarOptionsSubAccounts =
     Prisma.PromiseReturnType<typeof getAuthUserDetails>
   
   export type UsersWithAgencySubAccountPermissionsSidebarOptions =
@@ -140,7 +140,7 @@ import {
     address: Address
   }
   
-//   export type PricesList = Stripe.ApiList<Stripe.Price>
+  export type PricesList = Stripe.ApiList<Stripe.Price>
   
   export type FunnelsForSubAccount = Prisma.PromiseReturnType<
     typeof getFunnels
