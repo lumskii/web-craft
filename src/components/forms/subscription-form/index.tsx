@@ -39,7 +39,7 @@ const SubscriptionForm = ({ selectedPriceId }: Props) => {
         throw new Error();
       }
       toast({
-        title: "Payment successfull",
+        title: "Payment successful",
         description: "Your payment has been successfully processed. ",
       });
     } catch (error) {
@@ -48,7 +48,7 @@ const SubscriptionForm = ({ selectedPriceId }: Props) => {
         variant: "destructive",
         title: "Payment failed",
         description:
-          "We couldnt process your payment. Please try a different card",
+          "We couldn't process your payment. Please try a different card",
       });
     }
   };
