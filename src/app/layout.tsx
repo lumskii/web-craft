@@ -1,24 +1,28 @@
-import type { Metadata } from "next";
-import { DM_Sans, IBM_Plex_Mono } from "next/font/google";
-import "./globals.css";
-import { ThemeProvider } from "@/providers/theme-provider";
-import ModalProvider from "@/providers/modal-provider";
-import { Toaster } from "@/components/ui/toaster";
+import type { Metadata } from 'next'
+import { DM_Sans, IBM_Plex_Mono } from 'next/font/google'
+import './globals.css'
+import { ThemeProvider } from '@/providers/theme-provider'
+import ModalProvider from '@/providers/modal-provider'
+import { Toaster } from '@/components/ui/toaster'
+import { Toaster as SonnarToaster } from '@/components/ui/sonner'
 
-const font = DM_Sans({ subsets: ["latin"] });
+const font = DM_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: "Webcraft",
   description: "Web Agency Solutions Manager",
-};
+}
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+    >
       <body className={font.className}>
         <ThemeProvider
           attribute="class"
@@ -26,9 +30,13 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <ModalProvider>{children}<Toaster /></ModalProvider>
+          <ModalProvider>
+            {children}
+            <Toaster />
+            <SonnarToaster position="bottom-left" />
+          </ModalProvider>
         </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }
