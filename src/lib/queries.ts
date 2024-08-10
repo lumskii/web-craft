@@ -854,7 +854,7 @@ export const upsertFunnelPage = async (
   return response;
 };
 
-export const deleteFunnelePage = async (funnelPageId: string) => {
+export const deleteFunnelPage = async (funnelPageId: string) => {
   const response = await db.funnelPage.delete({ where: { id: funnelPageId } });
 
   return response;

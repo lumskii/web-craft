@@ -26,7 +26,7 @@ import { useToast } from '../ui/use-toast'
 import { FunnelPage } from '@prisma/client'
 import { FunnelPageSchema } from '@/lib/types'
 import {
-  deleteFunnelePage,
+  deleteFunnelPage,
   getFunnels,
   saveActivityLogsNotification,
   upsertFunnelPage,
@@ -171,7 +171,7 @@ const CreateFunnelPage: React.FC<CreateFunnelPageProps> = ({
                   disabled={form.formState.isSubmitting}
                   type="button"
                   onClick={async () => {
-                    const response = await deleteFunnelePage(defaultData.id)
+                    const response = await deleteFunnelPage(defaultData.id)
                     await saveActivityLogsNotification({
                       agencyId: undefined,
                       description: `Deleted a funnel page | ${response?.name}`,
